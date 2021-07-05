@@ -1,0 +1,14 @@
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  .box {
+    float: left;
+    width: auto;
+    padding: 30px;
+  }
+  
+  div.ex1{
+    color: red;
+  }
