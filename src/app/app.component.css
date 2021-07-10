@@ -12,3 +12,8 @@
   div.ex1{
     color: red;
   }
+
+  div #DetailsDIV{
+    text-align:left;
+  }
+  

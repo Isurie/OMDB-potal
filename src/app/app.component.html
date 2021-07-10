@@ -1,3 +1,4 @@
+<div class="background">
 <router-outlet></router-outlet>
 
 <mat-toolbar>
@@ -11,7 +12,7 @@
   </div>
 </mat-toolbar>
 
-<div class="box" style="margin: 50px; position: relative;left: 35%;" >
+<div class="box" style="margin: 50px; position: relative;left: 5%;" >
 
   <div class="container" style="text-align:center">
     
@@ -37,7 +38,23 @@
       </ng-container>
       <ng-template #elseTemplate>
 
-
+        <div  style="margin: 50px; position: fixed;left: 45%;" [hidden]="isShowDiv">
+          <div>
+            <mat-card><b>Movie Details : {{name}}</b></mat-card><br>
+          </div>
+          <div id="DetailsDIV">
+            <p> <b>Actors:</b> {{movieDetails['Actors']}}</p>
+            <p> <b>Awards:</b> {{movieDetails['Awards']}}</p>
+            <p> <b>BoxOffice:</b> {{movieDetails['BoxOffice']}}</p>
+            <p> <b>Country:</b> {{movieDetails['Country']}}</p>
+            <p> <b>Director:</b> {{movieDetails['Director']}}</p>
+            <p> <b>Genre:</b> {{movieDetails['Genre']}}</p>
+            <p> <b>Actors:</b> {{movieDetails['Language']}}</p>
+            <p> <b>Actors:</b> {{movieDetails['Plot']}}</p>
+            <p> <b>Actors:</b> {{movieDetails['Production']}}</p>
+          </div>
+          
+        </div>
         <div class="col-3" *ngFor="let movie of apiResponse['Search']">
 
           
@@ -46,12 +63,9 @@
             <img class="card-img-top" src="{{movie['Poster']}}">
             <mat-card>
               <div class="card-body">
-                <h5 class="card-title">{{movie['Title']}}</h5>
+                <h1 class="card-title">{{movie['Title']}}</h1>
                 <p class="card-text">Year: {{movie['Year']}}</p>
-                <div id="DetailsDIV" [hidden]="isShowDiv">
-                  <p> Type: {{movie['Type']}}</p>
-                  <p> imdbID: {{movie['imdbID']}}</p>
-                </div>
+                
                 
                 <button mat-raised-button color="primary" (click)="getDetails(this.movie)">Details</button>
               </div>
@@ -65,4 +79,4 @@
   </div>
 
 </div>
-
+</div>
